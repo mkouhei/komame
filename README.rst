@@ -6,6 +6,16 @@
 ``Komame`` provides discoverying the network nodes, and generate diagram
 with `Linkdraw <https://github.com/mtoshi/linkdraw>`_.
 
+..
+  image:: https://secure.travis-ci.org/mkouhei/komame.png
+  :target: http://travis-ci.org/mkouhei/komame
+  image:: https://coveralls.io/repos/mkouhei/komame/badge.png?branch=master
+  :target: https://coveralls.io/r/mkouhei/komame?branch=master
+
+.. image:: https://readthedocs.org/projects/komame/badge/?version=latest
+   :target: https://readthedocs.org/projects/komame/?badge=latest
+   :alt: Documentation Status
+
 Motivation
 ==========
 
@@ -17,19 +27,10 @@ About Komame
 ``Komame`` is my cat name, she is `Chartreux <http://en.wikipedia.org/wiki/Chartreux>`_. `My gravator image <http://gravatar.com/mkouhei>`_ is her face photo.
 Also ``Komame`` is the meaning of ``frequently`` in Japanese. My cat ``Komame`` is looking around frequently for food in the house. This project has been entangled in such her name.
 
-..
-  image:: https://secure.travis-ci.org/mkouhei/komame.png
-  :target: http://travis-ci.org/mkouhei/komame
-  image:: https://coveralls.io/repos/mkouhei/komame/badge.png?branch=master
-  :target: https://coveralls.io/r/mkouhei/komame?branch=master
-  image:: https://readthedocs.org/projects/komame/badge/?version=latest
-  :target: https://readthedocs.org/projects/komame/?badge=latest
-  :alt: Documentation Status
-
-  Documentation
-  =============
+.. Documentation
+   =============
    
-  http://komame.readthedocs.org/
+   http://komame.readthedocs.org/
 
 Features
 ========
