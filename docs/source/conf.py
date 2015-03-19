@@ -29,7 +29,7 @@ import shlex
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = ['sphinxcontrib.blockdiag']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -282,3 +282,6 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+blockdiag_fontpath = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
+blockdiag_html_image_format = 'SVG'
