@@ -14,7 +14,7 @@ There are a lot of embedded GNU/Linux servers and gadgets in my home network.I h
 About Komame
 ============
 
-``Komame`` is my cat name, she is `Chartreux <http://en.wikipedia.org/wiki/Chartreux>`_. My gravator icon image is her face photo.
+``Komame`` is my cat name, she is `Chartreux <http://en.wikipedia.org/wiki/Chartreux>`_. `My gravator image <http://gravatar.com/mkouhei>`_ is her face photo.
 Also ``Komame`` is the meaning of ``frequently`` in Japanese. My cat ``Komame`` is looking around frequently for food in the house. This project has been entangled in such her name.
 
 ..
