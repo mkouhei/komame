@@ -30,6 +30,7 @@ FLAGS := $(shell test -d $(GOPATH) && echo "-u")
 FUNC := -func
 
 #all: precheck clean test build
+all: build-docs
 
 precheck:
 	@if [ -d .git ]; then \
