@@ -6,6 +6,11 @@
 ``Komame`` provides discoverying the network nodes, and generate diagram
 with `Linkdraw <https://github.com/mtoshi/linkdraw>`_.
 
+Motivation
+==========
+
+There are a lot of embedded GNU/Linux servers and gadgets in my home network.I have created the network diagram with `sphinxcontrib-nwdiag <http://blockdiag.com/en/nwdiag/sphinxcontrib.html>`_ by hand. This is a very tedious task. I want to generate the diagram and discover the nodes.
+
 About Komame
 ============
 
