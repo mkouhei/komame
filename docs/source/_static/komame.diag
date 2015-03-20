@@ -1,0 +1,46 @@
+blockdiag {
+    default_shape=roundedbox
+    node_width=60
+    span_width=100
+    group {
+        label="nodes";
+        node [label="node"];
+        agent [label="agent"];
+    }
+    node <- discover [label="ping"];
+    agent -> receiver [label="metadata"];
+    group {
+        color = "#FFFFFF";
+        generator -> linkdraw [label="JSON"];
+        group {
+            label="Brawser";
+            linkdraw;
+        }
+        group {
+            label="komame";
+            group {
+                cache [label="cache", shape=flowchart.database];
+                orientation="portrait";
+                cache <-> controller;
+            }
+            group {
+                discover [label="discover"];
+                receiver [label="receiver"];
+            }
+            group {
+                generator [label="JSON generator"];
+                client [label="API client"];
+            }
+            discover, receiver -> controller;
+            controller -> client, generator;
+
+        }
+        client -> pdnsapi [label="REST/JSON"];
+        group {
+            label="PowerDNS";
+            pdnsapi [label="PowerDNS API"];
+            auth [label="Authoritative"];
+            pdnsapi -> auth;
+        }
+    }
+}
