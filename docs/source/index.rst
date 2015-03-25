@@ -12,7 +12,7 @@ Contents:
    :maxdepth: 2
 
    README
-   internal
+   design-notes
 
 .. toctree::
    :maxdepth: 1
