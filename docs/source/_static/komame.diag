@@ -8,14 +8,10 @@ blockdiag {
         agent [label="agent"];
     }
     node <- discover [label="ping"];
-    agent -> receiver [label="metadata"];
+    agent <-> agent_d [label="mDNS"];
     group {
         color = "#FFFFFF";
-        generator -> linkdraw [label="JSON"];
-        group {
-            label="Brawser";
-            linkdraw;
-        }
+
         group {
             label="komame";
             group {
@@ -25,15 +21,14 @@ blockdiag {
             }
             group {
                 discover [label="discover"];
-                receiver [label="receiver"];
+                agent_d [label="agent"];
             }
             group {
-                generator [label="JSON generator"];
                 client [label="API client"];
+                generator [label="JSON generator"];
             }
-            discover, receiver -> controller;
             controller -> client, generator;
-
+            discover, agent_d -> controller;
         }
         client -> pdnsapi [label="REST/JSON"];
         group {
@@ -42,5 +37,11 @@ blockdiag {
             auth [label="Authoritative"];
             pdnsapi -> auth;
         }
+        group {
+            label="Browser";
+            linkdraw;
+        }
+        generator -> linkdraw [label="JSON"];
     }
+    auth <- node [label="DNS lookup"];
 }
