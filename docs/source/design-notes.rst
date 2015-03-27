@@ -2,8 +2,8 @@
  Design notes
 ==============
 
-Idea
-====
+Design
+======
 
 discovery
 ---------
