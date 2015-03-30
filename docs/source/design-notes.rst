@@ -14,6 +14,10 @@ discovery
 * The nodes that are disable to log into shell have only one discovery way
   that is the polling from the discovery daemon(calls ``the discoverd``. Those nodes are named from MAC address with `MA-L Public Listing <http://standards.ieee.org/develop/regauth/oui/public.html>`_. (calls ``the agentless node``.)
 
+  * This site provides the search form only, but not provide API.
+  * The oui.txt has been updated daily, the file size is quite large with more than 3.3MB.
+  * So we obtain the oui.txt in one or more days intervals to be stored in local KVS.
+
 DNS
 ---
 
