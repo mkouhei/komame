@@ -39,8 +39,7 @@ Features
 Requirements
 ============
 
-.. * Golang >= 1.2
-
+* Golang >= 1.2
 * `Linkdraw <https://github.com/mtoshi/linkdraw>`_
 
 License
