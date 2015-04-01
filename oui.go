@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"os"
@@ -66,7 +65,6 @@ func (c *ouiData) readOui(p string) error {
 	// The First record is description
 	// The last record is IEEE registration authority
 	data := payload[2 : len(payload)-1]
-	fmt.Println(len(data))
 	o := &oui{}
 	for _, v := range data {
 		o.parseOui(v)
