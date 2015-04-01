@@ -14,7 +14,10 @@ const (
 	prefix = "oui_test"
 )
 
-var tdataPath = "testdata/oui.txt"
+var (
+	tdataPath = "testdata/oui.txt"
+	dummyUrl  = "http://localhost"
+)
 
 func TestReadOui(t *testing.T) {
 	c := &ouiData{}
@@ -40,6 +43,11 @@ func TestGetOuiData(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+
+	if err := getOuiData(filepath.Join(f, "oui.txt"), dummyUrl); err == nil {
+		t.Fatal(err)
+	}
+
 	if err := getOuiData(filepath.Join(f, "oui.txt"), ts.URL); err != nil {
 		t.Fatal(err)
 	}
