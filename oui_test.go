@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-var tdataPath = "../../../../../testdata/oui.txt"
+var tdataPath = "testdata/oui.txt"
 
 func TestReadOui(t *testing.T) {
 	c := &ouiData{}

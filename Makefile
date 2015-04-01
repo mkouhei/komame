@@ -50,7 +50,7 @@ precheck:
 prebuild:
 	go get -d -v ./...
 	install -d $(CURDIR)/_build/src/$(GOPKG)
-	cp -a $(CURDIR)/*.go $(CURDIR)/_build/src/$(GOPKG)
+	cp -a $(CURDIR)/*.go $(CURDIR)/testdata $(CURDIR)/_build/src/$(GOPKG)
 
 
 build: prebuild
