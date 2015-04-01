@@ -6,12 +6,10 @@
 ``Komame`` provides discoverying the network nodes, and generate diagram
 with `Linkdraw <https://github.com/mtoshi/linkdraw>`_.
 
-..
-  image:: https://secure.travis-ci.org/mkouhei/komame.png
-  :target: http://travis-ci.org/mkouhei/komame
-  image:: https://coveralls.io/repos/mkouhei/komame/badge.png?branch=master
-  :target: https://coveralls.io/r/mkouhei/komame?branch=master
-
+.. image:: https://secure.travis-ci.org/mkouhei/komame.png
+   :target: http://travis-ci.org/mkouhei/komame
+.. image:: https://coveralls.io/repos/mkouhei/komame/badge.png?branch=master
+   :target: https://coveralls.io/r/mkouhei/komame?branch=master
 .. image:: https://readthedocs.org/projects/komame/badge/?version=latest
    :target: https://readthedocs.org/projects/komame/?badge=latest
    :alt: Documentation Status
