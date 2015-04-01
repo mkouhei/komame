@@ -1,7 +1,17 @@
 package main
 
 import (
+	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/http/httptest"
+	"os"
+	"path/filepath"
 	"testing"
+)
+
+const (
+	prefix = "oui_test"
 )
 
 var tdataPath = "testdata/oui.txt"
@@ -15,7 +25,23 @@ func TestReadOui(t *testing.T) {
 }
 
 func TestGetOuiData(t *testing.T) {
-	if err := getOuiData(tdataPath); err != nil {
+	body, err := ioutil.ReadFile(tdataPath)
+	if err != nil {
 		t.Fatal(err)
 	}
+	ts := httptest.NewServer(http.HandlerFunc(func(
+		w http.ResponseWriter,
+		r *http.Request) {
+		fmt.Fprint(w, string(body))
+	}))
+	defer ts.Close()
+
+	f, err := ioutil.TempDir("", prefix)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := getOuiData(filepath.Join(f, "oui.txt"), ts.URL); err != nil {
+		t.Fatal(err)
+	}
+	os.RemoveAll(f)
 }

@@ -24,10 +24,13 @@ const (
 	ouiUrl = "http://standards.ieee.org/develop/regauth/oui/oui.txt"
 )
 
-func getOuiData(p string) error {
+func getOuiData(p, url string) error {
 	_, err := os.Stat(p)
 	if err != nil {
-		resp, err := http.Get(ouiUrl)
+		if url == "" {
+			url = ouiUrl
+		}
+		resp, err := http.Get(url)
 		if err != nil {
 			return err
 		}
