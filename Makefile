@@ -38,8 +38,7 @@ endif
 # "FUNC=-html" when generate HTML coverage report
 FUNC := -func
 
-#all: precheck clean test build
-all: build-docs
+all: precheck clean test build build-docs
 
 precheck:
 	@if [ -d .git ]; then \
