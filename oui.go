@@ -20,10 +20,6 @@ type oui struct {
 	address string
 }
 
-const (
-	ouiUrl = "http://standards.ieee.org/develop/regauth/oui/oui.txt"
-)
-
 func getOuiData(p, url string) error {
 	_, err := os.Stat(p)
 	if err != nil {
