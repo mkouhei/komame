@@ -4,6 +4,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"regexp"
 	"strings"
 	"time"
 )
@@ -88,4 +89,23 @@ func (o *oui) parseOui(oui string) {
 		}
 	}
 	o.address = strings.TrimSpace(o.address)
+}
+
+func convOUI(ma string) (string, bool) {
+	// 08:00:27:9d:7c:85
+	pat0 := regexp.MustCompile(`\A(([0-9a-fA-F]{2}\:){5})([0-9a-fA-F]{2})\z`)
+	// 08-00-27-9d-7c-85
+	pat1 := regexp.MustCompile(`\A(([0-9a-fA-F]{2}\-){5})([0-9a-fA-F]{2})\z`)
+	// 0800279d7c85
+	pat2 := regexp.MustCompile(`\A[0-9a-fA-F]{12}\z`)
+	if pat0.MatchString(ma) {
+		return strings.Replace(ma, ":", "", -1)[:6], true
+	}
+	if pat1.MatchString(ma) {
+		return strings.Replace(ma, "-", "", -1)[:6], true
+	}
+	if pat2.MatchString(ma) {
+		return ma[:6], true
+	}
+	return "", false
 }

@@ -15,8 +15,12 @@ const (
 )
 
 var (
-	tdataPath = "testdata/oui.txt"
-	dummyURL  = "http://localhost"
+	tdataPath  = "testdata/oui.txt"
+	dummyURL   = "http://localhost"
+	macAddr    = "08:00:27:9d:7c:80"
+	otherMac   = "08-00-27-9d-7c-80"
+	invalidMac = "gg:00:00:00:00:00"
+	noConvMac  = "0800279d7c85"
 )
 
 func TestReadOui(t *testing.T) {
@@ -52,4 +56,25 @@ func TestGetOuiData(t *testing.T) {
 		t.Fatal(err)
 	}
 	os.RemoveAll(f)
+}
+
+func TestConvOUI(t *testing.T) {
+	oui, rc := convOUI(macAddr)
+	if !rc || oui != "080027" {
+		t.Fatal("Failed to convert MAC address to OUI.")
+	}
+
+	if _, rc := convOUI(invalidMac); rc {
+		t.Fatal("Failed to detect MAC address")
+	}
+
+	oui, rc = convOUI(otherMac)
+	if !rc || oui != "080027" {
+		t.Fatal("Failed to convert MAC address to OUI.")
+	}
+
+	oui, rc = convOUI(noConvMac)
+	if !rc || oui != "080027" {
+		t.Fatal("Failed to extract OUI.")
+	}
 }
