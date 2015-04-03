@@ -91,6 +91,20 @@ func (o *oui) parseOui(oui string) {
 	o.address = strings.TrimSpace(o.address)
 }
 
+func (c *ouiData) search(ma string) *oui {
+	o, rc := convOUI(ma)
+	if !rc {
+		return nil
+	}
+
+	for _, v := range c.ouis {
+		if v.base16 == o {
+			return &v
+		}
+	}
+	return nil
+}
+
 func convOUI(ma string) (string, bool) {
 	// 08:00:27:9d:7c:85
 	pat0 := regexp.MustCompile(`\A(([0-9a-fA-F]{2}\:){5})([0-9a-fA-F]{2})\z`)

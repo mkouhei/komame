@@ -29,6 +29,10 @@ func TestReadOui(t *testing.T) {
 	if len(c.ouis) != 20507 {
 		t.Fatal("Fail reading oui.txt")
 	}
+
+	if c.search(macAddr).hex != "08-00-27" {
+		t.Fatal("Failed to search OUI")
+	}
 }
 
 func TestGetOuiData(t *testing.T) {
