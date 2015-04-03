@@ -16,7 +16,7 @@ const (
 
 var (
 	tdataPath = "testdata/oui.txt"
-	dummyUrl  = "http://localhost"
+	dummyURL  = "http://localhost"
 )
 
 func TestReadOui(t *testing.T) {
@@ -44,7 +44,7 @@ func TestGetOuiData(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	if err := getOuiData(filepath.Join(f, "oui.txt"), dummyUrl); err == nil {
+	if err := getOuiData(filepath.Join(f, "oui.txt"), dummyURL); err == nil {
 		t.Fatal(err)
 	}
 

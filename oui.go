@@ -24,7 +24,7 @@ func getOuiData(p, url string) error {
 	_, err := os.Stat(p)
 	if err != nil {
 		if url == "" {
-			url = ouiUrl
+			url = ouiURL
 		}
 		resp, err := http.Get(url)
 		if err != nil {
