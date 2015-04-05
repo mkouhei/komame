@@ -24,6 +24,13 @@ DNS
 * The agent nodes are enabled to lookup DNS with mDNS agent only.
 * The agentless nodes need the authoritative server for the LAN.
 * Use the metadata acquired from agent and discoverd to `PowerDNS API <https://doc.powerdns.com/md/httpapi/README/>`_ that is the built-in REST/JSON API of the PowerDNS (authoritative server >= 3.4).
+  * The searching neighbor networks use traceroute the target address, and
+
+Draw diagram
+------------
+
+* Drawing the network diagrams from the gathered data, using the `linkdraw <https://github.com/mtoshi/linkdraw>`_.
+* Generating JSON formated data from gathered data, see also the `examples of linkdraw <http://linkdraw.org/sample.html>`_.
 
 Data flow
 =========
