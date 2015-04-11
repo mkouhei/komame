@@ -17,9 +17,9 @@
 # along with this program.	 If not, see <http://www.gnu.org/licenses/>.
 
 
-BIN := komame
+BIN := $(shell basename $(CURDIR))
 SRC := *.go
-GOPKG := github.com/mkouhei/komame
+GOPKG := github.com/mkouhei/$(PRJNAME)/
 GOPATH := $(CURDIR)/_build
 export GOPATH
 PATH := $(CURDIR)/_build/bin:$(PATH)
