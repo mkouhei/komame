@@ -19,7 +19,7 @@
 
 BIN := $(shell basename $(CURDIR))
 SRC := *.go
-GOPKG := github.com/mkouhei/$(PRJNAME)/
+GOPKG := github.com/mkouhei/$(PRJNAME)
 GOPATH := $(CURDIR)/_build
 export GOPATH
 PATH := $(CURDIR)/_build/bin:$(PATH)
