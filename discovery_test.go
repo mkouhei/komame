@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestlocalNetworks(t *testing.T) {
+func TestLocalNetworks(t *testing.T) {
 	nws, err := localNetworks()
 	if err != nil {
 		t.Fatal(err)
