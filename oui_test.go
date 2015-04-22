@@ -16,7 +16,7 @@ const (
 
 var (
 	tdataPath  = "testdata/oui.txt"
-	dummyURL   = "http://localhost"
+	dummyURL   = "http://localhost:8080"
 	macAddr    = "08:00:27:9d:7c:80"
 	otherMac   = "08-00-27-9d-7c-80"
 	invalidMac = "gg:00:00:00:00:00"
