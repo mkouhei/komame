@@ -1,1 +1,1 @@
-PREBUILD_OPTS := $(CURDIR)/testdata
+PREBUILD_COPY_OPTS := $(CURDIR)/testdata
