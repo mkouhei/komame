@@ -17,6 +17,7 @@ discovery
   * This site provides the search form only, but not provide API.
   * The oui.txt has been updated daily, the file size is quite large with more than 3.3MB.
   * So we obtain the oui.txt once only when komame process start, store the data in memory.
+  * Polling is ICMP echo request, so you execute as a root permissive.
 
 DNS
 ---
